@@ -1,4 +1,8 @@
+import displayMovie from './moviedetails';
+
+
 const mainContainer = document.getElementById('main');
+
 
 const renderHome = (movies) => {
     mainContainer.innerHTML = ``;
@@ -37,6 +41,9 @@ const renderHome = (movies) => {
             movieProfile.href = '#';
             movieProfile.innerHTML = `<a><img class="movie-image" src="${movie.image.medium}"></a>`;
             movieContainer.appendChild(movieProfile);
+            movieProfile.addEventListener('click', () => {
+                displayMovie(movie);
+            })
         });
     };
 
