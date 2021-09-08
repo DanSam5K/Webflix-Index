@@ -8,7 +8,8 @@ class Likes {
     }
 
     likes(value){
-        return this.list.find((like) => like.item_id == value).likes;
+        console.log(this.list);
+        console.log(this.list.find((like) => like.item_id == value) || 0);
     }
 }
 

@@ -1,5 +1,5 @@
 import displayMovie from './moviedetails.js';
-import {displayLikes} from './displayLikes.js';
+import getLikes from './displayLikes.js';
 
 
 const mainContainer = document.getElementById('main');
@@ -38,8 +38,7 @@ const renderHome = (movies) => {
             'rounded', 'shadow', 'movieContainer', 'position-relative');
             movieSeparator.appendChild(movieContainer);
 
-            //put the function for the likes here
-            movieContainer.innerHTML += (displayLikes(movie.id)).outerHTML;
+            getLikes(movie.id, movieContainer);
     
             const movieProfile = document.createElement('a');
             movieProfile.href = '#';

@@ -1,4 +1,5 @@
 import myLikes from "./constructor.js";
+import allShows from "./MoviesAPI.js";
 
 export const createLikes = async (item_id) => {
   await fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1HfpxRPxUzIbQwHSCpLw/likes", {
@@ -9,19 +10,32 @@ export const createLikes = async (item_id) => {
    }),
    redirect: 'follow'
  })
- .then(response => response.text())
+ .then(response => console.log(response.text()))
  .catch(error => Error('error', error));
 };
 
-export const displayLikes = (item_id) =>  {
-    
+
+export const displayLikes = (item_id, allLikes) =>  {
+    let likesCount = allLikes.find(item => item.item_id == item_id);
+    if (likesCount == null){
+        likesCount = {likes: 0};
+    }
+
     const likeContainer = document.createElement('div');
     likeContainer.classList.add('position-absolute', 'd-flex',
-    'flex-row', 'bottom-0', 'end-0', 'bg-dark', 'p-2');
+    'flex-row', 'bottom-0', 'end-0', 'bg-dark', 'p-2',
+    'like-container');
 
+    const counter = document.createElement('input');
+    counter.type = 'hidden';
+    counter.id = item_id;
+    counter.value = likesCount.likes;
+    likeContainer.append(counter);
+
+    
     const likeLength = document.createElement('p');
     likeLength.classList.add('text-white', 'm-1', 'fs-3');
-    likeLength.textContent = `Likes ${myLikes.likes(item_id)}`;
+    likeLength.textContent = `Likes ${likesCount.likes}`;
     likeContainer.appendChild(likeLength);  
 
     const likes = document.createElement('button');
@@ -31,23 +45,23 @@ export const displayLikes = (item_id) =>  {
 
     likes.addEventListener('click', () => {
         createLikes(item_id);
-        item.value += 1;
+        const counterU = document.getElementById(item_id);
+        counterU.value = parseInt(counterU.value) + 1;
+        likeLength.textContent = `Likes ${counterU.value}`;
     });
 
     return likeContainer;
 
 };
 
-const getLikes = async () => {
+const getLikes = async (item_id, movieContainer) => {
     await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1HfpxRPxUzIbQwHSCpLw/likes`, {
-      method: 'GET',
-      redirect: 'follow'
+    method: 'GET',
+    redirect: 'follow'
     })
     .then(response => response.json())
     .then(result => {
-        myLikes.add(result);
-    }).catch(error => {
-        //some  error goes here
+        movieContainer.appendChild(displayLikes(item_id, result));
     });
 };
 
