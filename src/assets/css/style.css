@@ -58,3 +58,28 @@ body {
 .movie-image {
   width: 100%;
 }
+
+.pop-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #20222980;
+  padding: 5%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.pop-details {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: forestgreen;
+  border: 1px solid red;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
