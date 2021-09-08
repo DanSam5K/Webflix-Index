@@ -1,3 +1,6 @@
+import movieCommentForm from './movieComment';
+import { loadComments } from './involvementAPI';
+
 const mainContainer = document.getElementById('main');
 
 const displayMovie = (movie) => {
@@ -39,5 +42,14 @@ const displayMovie = (movie) => {
    </ul>
    `
    containerContent.appendChild(movieContent);
+
+   const commentContainer = document.createElement('div');
+   commentContainer.classList.add('col-6', 'p-1');
+   movieDetailsContainer.appendChild(commentContainer);
+
+   commentContainer.appendChild(movieCommentForm(movie.id));
+//    commentContainer.innerHTML += loadComments(movie.id);
+   console.log(loadComments(movie.id, commentContainer));
 }
+
 export default displayMovie;
