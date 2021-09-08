@@ -14,9 +14,9 @@ const createComments = async (item_id, username, comment) => {
    })
    .then(response => response.text())
    .catch(error => Error('error', error));
- };
+};
 
- export const loadComments = async (item_id, container) => {
+export const loadComments = async (item_id, container) => {
     await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1HfpxRPxUzIbQwHSCpLw/comments?item_id=${item_id}`, {
      method: 'GET',
      redirect: 'follow'
@@ -28,6 +28,6 @@ const createComments = async (item_id, username, comment) => {
    .catch(error => {
        container.innerHTML += `<p class="text-white"> No comments </p>`;
    });
- };
+};
 
 export default createComments;

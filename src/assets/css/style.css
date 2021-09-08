@@ -4,6 +4,22 @@
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgb(62, 3, 90); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 body {
   background-image: linear-gradient(#3048cf, #0f173d);
   background-repeat: no-repeat;
@@ -58,6 +74,10 @@ body {
 
 .movie-image {
   width: 100%;
+  border-radius: 5px;
+  box-shadow: -1px 1px 15px -1px #575757bf;
+  -webkit-box-shadow: -1px 1px 15px -1px #575757bf;
+  -moz-box-shadow: -1px 1px 15px -1px #575757bf;
 }
 
 .pop-bg {
@@ -65,7 +85,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #20222980;
-  padding: 5%;
+  padding: 2% 5% 12% 5%;
   top: 0;
   left: 0;
   z-index: 100;
@@ -76,19 +96,41 @@ body {
   width: 100%;
   height: 100%;
   background-color: #0b0e11;
-  border-radius: 10px;
-  overflow: scroll;
+  border-radius: 0 0 10px 10px;
+  overflow-y: scroll;
   padding: 25px;
+  box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -webkit-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -moz-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+}
+
+.movie-banner {
+  box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -webkit-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -moz-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  border-radius: 10px 10px 0 0;
 }
 
 .close-btn {
   position: absolute;
   top: 0;
   right: 0;
-  width: 30px;
-  margin: 10px;
+  width: 70px;
+  margin: 5px;
+  padding-top: 1px;
+  font-size: 20px;
 }
 
 .pop-image {
   width: 75%;
 }
+
+.like-button {
+  border: 0;
+  background-color: #00000000;
+  height: 20px;
+  width: 40px;
+  padding-top: 0;
+  margin-top: 5px;
+}
+
