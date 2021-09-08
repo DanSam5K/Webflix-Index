@@ -6,7 +6,7 @@ const displayMovie = (movie) => {
    mainContainer.appendChild(bgContainer);
 
    const movieDetailsContainer = document.createElement('div');
-   movieDetailsContainer.classList.add('pop-details');
+   movieDetailsContainer.classList.add('pop-details', 'row', 'm-0');
    bgContainer.appendChild(movieDetailsContainer);
 
    const closeBtn = document.createElement('BUTTON');
@@ -17,5 +17,27 @@ const displayMovie = (movie) => {
    closeBtn.addEventListener('click', () => {
        mainContainer.removeChild(bgContainer);
    })
+   const containerContent = document.createElement('div');
+   containerContent.classList.add('col-6', 'p-1');
+   movieDetailsContainer.appendChild(containerContent);
+
+   const movieImage = document.createElement('img');
+   movieImage.classList.add('rounded', 'pop-image');
+   movieImage.src = movie.image.original;
+   containerContent.appendChild(movieImage);
+
+   const movieContent= document.createElement('div');
+   movieContent.classList.add('w-100', 'text-white', );
+   movieContent.innerHTML = `
+   <h4>${movie.name}</h4>
+   <ul>
+      <li>${movie.language}</li>
+      <li>${movie.premiered}</li>
+      <li><a href="${movie.officialSite}" target="_blank"> Official Site </a></li>
+      <li>Ratings: ${movie.rating.average}</li>
+      <li>${movie.summary}</li>
+   </ul>
+   `
+   containerContent.appendChild(movieContent);
 }
 export default displayMovie;
