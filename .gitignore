@@ -7,3 +7,4 @@ install-linters.sh
 .hintrc
 .stylelintrc.json
 install-linters.sh
+coverage/
