@@ -1,4 +1,5 @@
 import renderHome from "./Home.js";
+import getLikes from "./displayLikes.js";
 
 export const searchResult = async(search) => {
     let link = `https://api.tvmaze.com/search/shows?q=${search}`;
@@ -17,6 +18,8 @@ const allShows = async() => {
     })
     .then((data) => {
         renderHome(data);
+    }).then(() => {
+        getLikes();
     });
 };
 

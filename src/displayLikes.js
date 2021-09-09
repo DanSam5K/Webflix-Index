@@ -1,3 +1,5 @@
+let allLikes = [];
+
 export const createLikes = async (item_id) => {
   await fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1HfpxRPxUzIbQwHSCpLw/likes", {
    method: 'POST',
@@ -12,53 +14,61 @@ export const createLikes = async (item_id) => {
 };
 
 
-export const displayLikes = (item_id, allLikes) =>  {
-    let likesCount = allLikes.find(item => item.item_id == item_id);
-    if (likesCount == null){
-        likesCount = {likes: 0};
-    }
-
-    const likeContainer = document.createElement('div');
-    likeContainer.classList.add('position-absolute', 'd-flex',
-    'flex-row', 'bottom-0', 'end-0', 'bg-dark', 'p-2',
-    'like-container');
-
-    const counter = document.createElement('input');
-    counter.type = 'hidden';
-    counter.id = item_id;
-    counter.value = likesCount.likes;
-    likeContainer.append(counter);
-
+export const displayLikes = () =>  {
     
-    const likeLength = document.createElement('p');
-    likeLength.classList.add('text-white', 'm-1', 'fs-3');
-    likeLength.textContent = `Likes ${likesCount.likes}`;
-    likeContainer.appendChild(likeLength);  
+    const allMoviesContainer = document.getElementById('allMoviesContainer');
+    allMoviesContainer.querySelectorAll('input').forEach((movie) => {
+        let likesCount = 0;
+        if(allLikes[movie.value]){
+            likesCount = allLikes[movie.value].likes;
+        }
 
-    const likes = document.createElement('button');
-    likes.classList.add('like-button');
-    likes.innerHTML = `<i class="fas fa-heart fs-2 text-white"></i>`;
-    likeContainer.appendChild(likes);
+        const movieContainer = movie.parentNode;
 
-    likes.addEventListener('click', () => {
-        createLikes(item_id);
-        const counterU = document.getElementById(item_id);
-        counterU.value = parseInt(counterU.value) + 1;
-        likeLength.textContent = `Likes ${counterU.value}`;
+        const likeContainer = document.createElement('div');
+        likeContainer.classList.add('position-absolute', 'd-flex',
+        'flex-row', 'bottom-0', 'end-0', 'bg-dark', 'p-2',
+        'like-container');
+
+        const counter = document.createElement('input');
+        counter.type = 'hidden';
+        counter.id = movie.value;
+        counter.value = likesCount;
+        likeContainer.append(counter);
+
+        
+        const likeLength = document.createElement('p');
+        likeLength.classList.add('text-white', 'm-1', 'fs-3');
+        likeLength.textContent = `Likes ${likesCount}`;
+        likeContainer.appendChild(likeLength);  
+
+        const likes = document.createElement('button');
+        likes.classList.add('like-button');
+        likes.innerHTML = `<i class="fas fa-heart fs-2 text-white"></i>`;
+        likeContainer.appendChild(likes);
+
+        likes.addEventListener('click', () => {
+            createLikes(movie.value);
+            const counterU = document.getElementById(movie.value);
+            counterU.value = parseInt(counterU.value) + 1;
+            likeLength.textContent = `Likes ${counterU.value}`;
+        });
+
+        movieContainer.appendChild(likeContainer);
     });
-
-    return likeContainer;
+    
 
 };
 
-const getLikes = async (item_id, movieContainer) => {
+const getLikes = async () => {
     await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1HfpxRPxUzIbQwHSCpLw/likes`, {
     method: 'GET',
     redirect: 'follow'
     })
     .then(response => response.json())
     .then(result => {
-        movieContainer.appendChild(displayLikes(item_id, result));
+        allLikes = result;
+        displayLikes();
     });
 };
 

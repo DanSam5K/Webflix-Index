@@ -1,5 +1,5 @@
 import displayMovie from './moviedetails.js';
-import getLikes from './displayLikes.js';
+import {displayLikes} from './displayLikes.js';
 
 
 const mainContainer = document.getElementById('main');
@@ -19,6 +19,7 @@ const renderHome = (movies) => {
     mainContainer.appendChild(homeContainer)
 
     const allMoviesContainer = document.createElement('div');
+    allMoviesContainer.id = 'allMoviesContainer';
     allMoviesContainer.classList.add('w-100', 'row', 'my-2', 
     'p-0', 'border-4', 'border-bottom');
     homeContainer.appendChild(allMoviesContainer);
@@ -43,7 +44,10 @@ const renderHome = (movies) => {
             'rounded', 'shadow', 'movieContainer', 'position-relative');
             movieSeparator.appendChild(movieContainer);
 
-            getLikes(movie.id, movieContainer);
+            const movieId = document.createElement('input');
+            movieId.type = 'hidden';
+            movieId.value = movie.id;
+            movieContainer.appendChild(movieId);
     
             const movieProfile = document.createElement('a');
             movieProfile.href = '#';
@@ -74,6 +78,7 @@ const renderHome = (movies) => {
         if(page > 1) {
             page -= 1;
             renderMoviePage(page);
+            displayLikes();
         }
     });
 
@@ -88,6 +93,7 @@ const renderHome = (movies) => {
 
         pageNum.addEventListener('click', () => {
             renderMoviePage(i);
+            displayLikes();
             page = i;
         });
     }
@@ -101,6 +107,7 @@ const renderHome = (movies) => {
         if(page < (movies.length/12)) {
             page += 1;
             renderMoviePage(page);
+            displayLikes();
         }
     });
 
@@ -108,7 +115,6 @@ const renderHome = (movies) => {
         pagination.querySelectorAll('a').forEach((item) => {
             if(item.textContent == page) {
                 item.parentElement.classList.add('active');
-                console.log(item.textContent);
             }else {
                 item.parentElement.classList.remove('active');
             }
