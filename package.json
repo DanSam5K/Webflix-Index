@@ -46,5 +46,11 @@
     "babel-jest": "^27.1.1",
     "node-fetch": "^3.0.0",
     "ts-jest": "^27.0.5"
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./test/setupJest.js"
+    ]
   }
 }
