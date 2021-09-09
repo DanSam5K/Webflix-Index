@@ -26,6 +26,7 @@ export const displayLikes = () =>  {
         const movieContainer = movie.parentNode;
 
         const likeContainer = document.createElement('div');
+        likeContainer.id = 'likeContainer';
         likeContainer.classList.add('position-absolute', 'd-flex',
         'flex-row', 'bottom-0', 'end-0', 'bg-dark', 'p-2',
         'like-container');
