@@ -1,10 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import movieCommentForm from "../src/movieComment";
-import createComments, {loadComments} from "../src/involvementAPI";
+import { loadComments } from "../src/involvementAPI";
 import loadCommentsContainer from './__mock__/loadCommentsContainerMocks';
-
 
 describe('Test comments', () => {
 
@@ -18,4 +16,10 @@ describe('Test comments', () => {
             expect(comments.length).not.toBe(0);
         });
     })
+
+    test('commentNumber should return the size of an API comment data', () => {
+        fetch.mockResponseOnce(JSON.stringify([{item_id: 500, username: 'jaar', comment: 'test'}]));  
+        const testResult = loadComments.length;
+        expect(testResult).toBe(1);
+      });
 })

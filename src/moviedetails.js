@@ -8,11 +8,11 @@ const displayMovie = (movie) => {
    bgContainer.classList.add('pop-bg');
    mainContainer.appendChild(bgContainer);
 
-   const titlenBtn = document.createElement('div');
-   titlenBtn.classList.add('w-100', 'bg-dark', 
+   const titleBtn = document.createElement('div');
+   titleBtn.classList.add('w-100', 'bg-dark', 
    'm-0', 'p-2', 'position-relative', 'movie-banner');
-   titlenBtn.innerHTML = `<h2 class="text-white text-center my-1">${movie.name}</h2>`;
-   bgContainer.appendChild(titlenBtn);
+   titleBtn.innerHTML = `<h2 class="text-white text-center my-1">${movie.name}</h2>`;
+   bgContainer.appendChild(titleBtn);
 
    const movieDetailsContainer = document.createElement('div');
    movieDetailsContainer.classList.add('pop-details', 'row', 'm-0');
@@ -21,7 +21,7 @@ const displayMovie = (movie) => {
    const closeBtn = document.createElement('BUTTON');
    closeBtn.classList.add('btn', 'btn-outline-danger', 'close-btn');
    closeBtn.textContent = `Close`;
-   titlenBtn.appendChild(closeBtn)
+   titleBtn.appendChild(closeBtn)
 
    closeBtn.addEventListener('click', () => {
        mainContainer.removeChild(bgContainer);
@@ -40,7 +40,7 @@ const displayMovie = (movie) => {
    movieContent.innerHTML = `
    <ul class="list-group p-3 movie-details fs-6">
       <li><span>${movie.summary}</span></li>
-      <li class="d-flex flex-row justify-content-between"><p> Lenguage: ${movie.language}</p> <p> Premiered: ${movie.premiered}</p></li>
+      <li class="d-flex flex-row justify-content-between"><p> Language: ${movie.language}</p> <p> Premiered: ${movie.premiered}</p></li>
       <li class="d-flex flex-row justify-content-between"><p>Ratings: ${movie.rating.average}</p> <a href="${movie.officialSite}" target="_blank" class="my-2"> Official Site </a></li>
    </ul>
    `
