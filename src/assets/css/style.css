@@ -143,4 +143,12 @@ body {
 
 .movie-details {
   list-style: none;
+} 
+
+.list-group-comments li:nth-child(odd) {
+  background: #0c1a27;
+}
+
+.list-group-comments li:nth-child(even) {
+  background: #414144;
 }
