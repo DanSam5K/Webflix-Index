@@ -9,15 +9,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-  background: rgb(62, 3, 90); 
+  background: rgb(62, 3, 90);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
   width: 100%;
   border-bottom: 0;
   height: 55px;
-  background-color:#000925;
+  background-color: #000925;
   z-index: 90;
 }
 
@@ -56,7 +56,7 @@ body {
 }
 
 .nav-link {
-  color: #ffffff;
+  color: #fff;
   font-weight: 700;
   font-size: 24px;
 }
@@ -130,7 +130,7 @@ body {
 
 .like-button {
   border: 0;
-  background-color: #00000000;
+  background-color: #0000;
   height: 20px;
   width: 40px;
   padding-top: 0;
@@ -143,7 +143,7 @@ body {
 
 .movie-details {
   list-style: none;
-} 
+}
 
 .list-group-comments li:nth-child(odd) {
   background: #0c1a27;

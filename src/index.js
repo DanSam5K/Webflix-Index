@@ -4,5 +4,3 @@ import navBarButtons from './header.js';
 
 navBarButtons();
 allShows();
-
-

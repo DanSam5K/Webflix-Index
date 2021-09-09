@@ -1,36 +1,36 @@
- import createComments from "./involvementAPI.js";
- 
- const movieCommentForm = (item_id) => {
-    const formInputs = document.createElement('div');
+import createComments from './involvementAPI.js';
 
-    const formUsername = document.createElement('input');
-    formUsername.classList.add('form-control');
-    formUsername.placeholder = `Username`;
-    formUsername.maxLength = 30;
-    formUsername.minLength = 4;
-    formInputs.appendChild(formUsername);
+const movieCommentForm = (itemId) => {
+  const formInputs = document.createElement('div');
 
-    const formComment = document.createElement('textarea');
-    formComment.classList.add('form-control', 'my-2');
-    formComment.placeholder = `Enter comment`;
-    formComment.rows = 3;
-    formComment.maxLength = 300;
-    formComment.minLength = 4;
-    formInputs.appendChild(formComment);
+  const formUsername = document.createElement('input');
+  formUsername.classList.add('form-control');
+  formUsername.placeholder = 'Username';
+  formUsername.maxLength = 30;
+  formUsername.minLength = 4;
+  formInputs.appendChild(formUsername);
 
-    const formBtn = document.createElement('button');
-    formBtn.innerText = `Add comment`;
-    formBtn.classList.add('btn', 'btn-primary');
-    formBtn.type = `button`;
-    formInputs.appendChild(formBtn);
+  const formComment = document.createElement('textarea');
+  formComment.classList.add('form-control', 'my-2');
+  formComment.placeholder = 'Enter comment';
+  formComment.rows = 3;
+  formComment.maxLength = 300;
+  formComment.minLength = 4;
+  formInputs.appendChild(formComment);
 
-    formBtn.addEventListener('click', () => {
-      createComments(item_id, formUsername.value, formComment.value);
-      formUsername.value = '';
-      formComment.value = '';
-    });
+  const formBtn = document.createElement('button');
+  formBtn.innerText = 'Add comment';
+  formBtn.classList.add('btn', 'btn-primary');
+  formBtn.type = 'button';
+  formInputs.appendChild(formBtn);
 
-    return formInputs;
- }
+  formBtn.addEventListener('click', () => {
+    createComments(itemId, formUsername.value, formComment.value);
+    formUsername.value = '';
+    formComment.value = '';
+  });
+
+  return formInputs;
+};
 
 export default movieCommentForm;
