@@ -1,6 +1,3 @@
-import myLikes from "./constructor.js";
-import allShows from "./MoviesAPI.js";
-
 export const createLikes = async (item_id) => {
   await fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1HfpxRPxUzIbQwHSCpLw/likes", {
    method: 'POST',

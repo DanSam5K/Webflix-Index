@@ -11,11 +11,16 @@ const renderHome = (movies) => {
     const homeContainer =  document.createElement('div');
     homeContainer.classList.add('w-100', 'm-0', 
     'p-0', 'bg-mywhite', 'p-3');
+
+    homeContainer.innerHTML += `<div class="d-flex flex-column align-items-center border-4 border-bottom my-2">
+    <h1>Tv Shows</h1>
+    <h2>${movies.length} Tv shows available!</h2>
+    </div>`;
     mainContainer.appendChild(homeContainer)
 
     const allMoviesContainer = document.createElement('div');
-    allMoviesContainer.classList.add('w-100', 'row', 'm-0', 
-    'p-0');
+    allMoviesContainer.classList.add('w-100', 'row', 'my-2', 
+    'p-0', 'border-4', 'border-bottom');
     homeContainer.appendChild(allMoviesContainer);
 
     let page = 1;
@@ -53,7 +58,7 @@ const renderHome = (movies) => {
     renderMoviePage(page);
 
     const navigationContainer = document.createElement('nav');
-    navigationContainer.classList.add('Page', 'navigation');
+    navigationContainer.classList.add('Page', 'navigation', 'my-3');
     homeContainer.appendChild(navigationContainer);
 
     const pagination = document.createElement('ul');

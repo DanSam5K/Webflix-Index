@@ -1,5 +1,5 @@
-import movieCommentForm from './movieComment';
-import { loadComments } from './involvementAPI';
+import movieCommentForm from './movieComment.js';
+import { loadComments } from './involvementAPI.js';
 
 const mainContainer = document.getElementById('main');
 
@@ -31,30 +31,34 @@ const displayMovie = (movie) => {
    movieDetailsContainer.appendChild(containerContent);
 
    const movieImage = document.createElement('img');
-   movieImage.classList.add('rounded', 'pop-image');
+   movieImage.classList.add('pop-image');
    movieImage.src = movie.image.original;
    containerContent.appendChild(movieImage);
 
    const movieContent= document.createElement('div');
    movieContent.classList.add('w-100', 'text-white', );
    movieContent.innerHTML = `
-   <h4>${movie.name}</h4>
-   <ul>
-      <li>${movie.language}</li>
-      <li>${movie.premiered}</li>
-      <li><a href="${movie.officialSite}" target="_blank"> Official Site </a></li>
-      <li>Ratings: ${movie.rating.average}</li>
-      <li>${movie.summary}</li>
+   <ul class="list-group p-3 movie-details fs-6">
+      <li><span>${movie.summary}</span></li>
+      <li class="d-flex flex-row justify-content-between"><p> Lenguage: ${movie.language}</p> <p> Premiered: ${movie.premiered}</p></li>
+      <li class="d-flex flex-row justify-content-between"><p>Ratings: ${movie.rating.average}</p> <a href="${movie.officialSite}" target="_blank" class="my-2"> Official Site </a></li>
    </ul>
    `
    containerContent.appendChild(movieContent);
+   
 
    const commentContainer = document.createElement('div');
-   commentContainer.classList.add('col-6', 'p-1');
+   commentContainer.classList.add('col-6', 'p-2');
    movieDetailsContainer.appendChild(commentContainer);
 
    commentContainer.appendChild(movieCommentForm(movie.id));
-   loadComments(movie.id, commentContainer);
+
+   const loadCommentsContainer = document.createElement('div');
+   loadCommentsContainer.classList.add('my-2');
+   loadCommentsContainer.id = 'loadCommentsContainer';
+   commentContainer.appendChild(loadCommentsContainer);
+
+   loadComments(movie.id);
 }
 
 export default displayMovie;

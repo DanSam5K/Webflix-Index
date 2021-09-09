@@ -40,6 +40,7 @@ body {
   border-bottom: 0;
   height: 55px;
   background-color:#000925;
+  z-index: 90;
 }
 
 #Footer {
@@ -123,6 +124,8 @@ body {
 
 .pop-image {
   width: 75%;
+  border-radius: 10px;
+  box-shadow: -1px 1px 10px -1px #dbd7d7bf;
 }
 
 .like-button {
@@ -138,3 +141,6 @@ body {
   border-radius: 10px;
 }
 
+.movie-details {
+  list-style: none;
+}

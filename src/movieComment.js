@@ -1,4 +1,4 @@
- import createComments, { loadComments } from "./involvementAPI";
+ import createComments from "./involvementAPI.js";
  
  const movieCommentForm = (item_id) => {
     const formInputs = document.createElement('div');
@@ -8,6 +8,7 @@
     formUsername.placeholder = `Username`;
     formUsername.maxLength = 30;
     formUsername.minLength = 4;
+    formInputs.appendChild(formUsername);
 
     const formComment = document.createElement('textarea');
     formComment.classList.add('form-control', 'my-2');
@@ -15,22 +16,20 @@
     formComment.rows = 3;
     formComment.maxLength = 300;
     formComment.minLength = 4;
+    formInputs.appendChild(formComment);
 
     const formBtn = document.createElement('button');
     formBtn.innerText = `Add comment`;
     formBtn.classList.add('btn', 'btn-primary');
     formBtn.type = `button`;
+    formInputs.appendChild(formBtn);
 
-    formBtn.addEventListener('click', (e) => {
-      e.preventDefault();
+    formBtn.addEventListener('click', () => {
       createComments(item_id, formUsername.value, formComment.value);
       formUsername.value = '';
       formComment.value = '';
-    })
+    });
 
-    formInputs.appendChild(formUsername);
-    formInputs.appendChild(formComment);
-    formInputs.appendChild(formBtn);
     return formInputs;
  }
 
