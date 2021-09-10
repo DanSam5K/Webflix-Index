@@ -98,7 +98,7 @@ const renderHome = (movies) => {
     if (e.target.nodeName === 'A' && e.target.textContent !== 'Previous' && e.target.textContent !== 'Next') {
       renderMoviePage(e.target.textContent);
       displayLikes();
-      page = e.target.textContent;
+      page = parseInt(e.target.textContent, 10);
     }
   });
 
@@ -115,14 +115,8 @@ const renderHome = (movies) => {
     }
   });
 
-  pagination.addEventListener('click', () => {
+  pagination.addEventListener('click', (e) => {
     pagination.querySelectorAll('a').forEach((item) => {
-      if (item.textContent === page) {
-        item.parentElement.classList.add('active');
-      } else {
-        item.parentElement.classList.remove('active');
-      }
-
       if (item.textContent === 'Previous' && page > 1) {
         item.parentElement.classList.remove('disabled');
       } else if (item.textContent === 'Previous' && page < 2) {
@@ -133,6 +127,12 @@ const renderHome = (movies) => {
         item.parentElement.classList.add('disabled');
       } else if (item.textContent === 'Next' && page < (movies.length / 12)) {
         item.parentElement.classList.remove('disabled');
+      }
+
+      if (parseInt(item.textContent, 10) === page) {
+        item.parentElement.classList.add('active');
+      } else {
+        item.parentElement.classList.remove('active');
       }
     });
   });
