@@ -11,8 +11,8 @@ import getLikes from '../src/displayLikes.js';
 describe('Test Movie API', () => {
   beforeEach(() => {
     fetchMock
-    .get('https://api.tvmaze.com/shows', JSON.stringify(allmovieMovies), { overwriteRoutes: false })
-    .get('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1HfpxRPxUzIbQwHSCpLw/likes',JSON.stringify([{likes: 7, item_id: 500}]), { overwriteRoutes: false });
+      .get('https://api.tvmaze.com/shows', JSON.stringify(allmovieMovies), { overwriteRoutes: false })
+      .get('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1HfpxRPxUzIbQwHSCpLw/likes', JSON.stringify([{ likes: 7, item_id: 500 }]), { overwriteRoutes: false });
   });
 
   test('Get all movies', () => {
@@ -28,9 +28,9 @@ describe('Test Movie API', () => {
     getLikes().then(() => {
       const likescount = document.querySelectorAll('p');
       let count = 0;
-      
+
       likescount.forEach((like) => {
-        if (like.value == 7){
+        if (like.value === 7) {
           count += 1;
         }
       });

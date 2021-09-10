@@ -19,7 +19,8 @@ const allShows = async () => {
       renderHome(data);
     }).then(() => {
       getLikes();
-    }).catch(() => {
+    })
+    .catch(() => {
       throw new Error('Failed to load tv shows');
     });
 };
