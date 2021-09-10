@@ -1,76 +1,82 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# WEBFLIX (JavaScript Capstone Project)
 
-> One paragraph statement about the project.
+> In this activity, we worked as a team to prepare a Kanban board with a GitHub project. As this our very first group project in our Microverse journey, a very detailed template was provided by Microverse. In order to copy the Kanban board quickly, using a special script prepared for the team.
 
-![screenshot](./app_screenshot.png)
+> The JavaScript capstone project is about building our own web application based on an external API(TVmaze API: data about TV series and movies). TVmaze API was selected by the team, because it provides data about a topic that we both like, to enable us build the webapp around it. The webapp will have 2 user interfaces.
+- A home page showing a list of items that you can "like."
+- A popup window with more data about an item that you can use to comment on it
 
-Additional description about the project and its features.
+![screenshot](./app_screenshot.png)  ![screenshot](./app_popscreenshot.png)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JavaScript
+- HTML & CSS
+- Bootstrap
+- Webpack
+- Jest testing framework
+- Git and Github pages
+- VSCode
+- Linter Checkers
 
-## Live Demo
+## Deployment Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
+- Deployed with gh-pages
+[Live Demo]()
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-### Setup
-
+- IDE to edit and run the code (We use Visual Studio Code 🔥).
+- [Node.js](https://nodejs.org/en/download/) already downloaded.
+- Webpack - [click here to getting started](https://webpack.js.org/guides/getting-started/).
 ### Install
 
-### Usage
+To get a local copy up and running follow these simple example steps.
+- Open terminal
+- Clone this project using the command `git clone https://github.com/DanSam5K/Webflix-Index.git`
+- `cd <clone>` folder
+- Run `npm install` to install all project dependencies
+- Run `npm start` in your local browser or using Live Server in Visual Studio Code.
 
-### Run tests
+## Author 👤 
 
-### Deployment
+👨‍💻 **Daniel Samuel**
 
+- Github: [DanSam5k](https://github.com/DanSam5k)
+- Twitter: [@_dan_sam](https://twitter.com/_dan_sam)
+- Linkedin: [dansamuel](https://www.linkedin.com/in/dansamuel/)
 
+👨‍💻 **Jose Alberto Arriaga Ramos**
 
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@jaarkira](https://github.com/jaarkira )
+- Twitter: [@91_jaar](https://twitter.com/91_jaar )
+- LinkedIn: [Jose Arriaga](https://www.linkedin.com/in/jaar/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/DanSam5K/Webflix-Index/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
+
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Hat tip to anyone whose code was used 🔰
+- Inspiration 💘
+- Microverse program ⚡
+- Our standup team 🏹
+- Our family's support 🙌
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.

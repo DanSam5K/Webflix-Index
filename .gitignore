@@ -8,3 +8,4 @@ install-linters.sh
 .stylelintrc.json
 install-linters.sh
 coverage/
+.DS_Store
