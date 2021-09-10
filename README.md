@@ -24,7 +24,7 @@
 ## Deployment Live Demo
 
 - Deployed with gh-pages
-[Live Demo]()
+[Live Demo](https://dansam5k.github.io/Webflix-Index/index.html)
 
 ## Getting Started
 
