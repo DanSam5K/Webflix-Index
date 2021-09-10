@@ -115,7 +115,7 @@ const renderHome = (movies) => {
     }
   });
 
-  pagination.addEventListener('click', (e) => {
+  pagination.addEventListener('click', () => {
     pagination.querySelectorAll('a').forEach((item) => {
       if (item.textContent === 'Previous' && page > 1) {
         item.parentElement.classList.remove('disabled');

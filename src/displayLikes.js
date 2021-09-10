@@ -9,15 +9,15 @@ export const createLikes = async (itemId) => {
     }),
     redirect: 'follow',
   })
-  .catch((error) => Error('error', error));
+    .catch((error) => Error('error', error));
 };
 
 export const displayLikes = () => {
   const allMoviesContainer = document.getElementById('allMoviesContainer');
   allMoviesContainer.querySelectorAll('input').forEach((movie) => {
     let likesCount = 0;
-    if (allLikes.find(like => like.item_id === parseInt(movie.value, 10))) {
-      likesCount = allLikes.find(like => like.item_id === parseInt(movie.value, 10)).likes;
+    if (allLikes.find((like) => like.item_id === parseInt(movie.value, 10))) {
+      likesCount = allLikes.find((like) => like.item_id === parseInt(movie.value, 10)).likes;
     }
 
     const movieContainer = movie.parentNode;

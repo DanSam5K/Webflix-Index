@@ -23,7 +23,6 @@ const createComments = async (itemId, username, comment) => {
     }),
     redirect: 'follow',
   })
-    .then((response) => response.jason())
     .then(() => {
       loadComments(itemId);
     })
