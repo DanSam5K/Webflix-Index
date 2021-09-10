@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import fetchMock from 'fetch-mock'; // eslint-disable-line no-eval 
+import fetchMock from 'fetch-mock';// eslint-disable-line no-eval 
 import allmovieMovies from './__mock__/allmoviesdataMock.js';
 import mainContainer from './__mock__/mainMock.js';
 import allShows from '../src/MoviesAPI.js';
@@ -36,5 +36,10 @@ describe('Test Movie API', () => {
       });
       expect(count).toBe(0);
     });
+  });
+
+  test('Get the count for all the movies', () => {
+    const movieCount = document.getElementById('moviesTotalCount');
+    expect(parseInt(movieCount.textContent, 10)).toBe(12);
   });
 });

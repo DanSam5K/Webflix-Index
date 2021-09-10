@@ -12,7 +12,10 @@ const renderHome = (movies) => {
 
   homeContainer.innerHTML += `<div class="d-flex flex-column align-items-center border-4 border-bottom my-2">
     <h1>Tv Shows</h1>
-    <h2>${movies.length} Tv shows available!</h2>
+    <div class="d-flex flex-row">
+      <p id="moviesTotalCount" class="fs-2 mx-3">${movies.length}</p>
+      <p class="fs-2">Tv shows available!</p>
+    </div>
     </div>`;
   mainContainer.appendChild(homeContainer);
 
