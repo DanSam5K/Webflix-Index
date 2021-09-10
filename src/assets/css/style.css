@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;700&display=swap');
+
+* {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(62, 3, 90);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  background-image: linear-gradient(#3048cf, #0f173d);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+#main {
+  padding-top: 55px;
+  margin-bottom: 11vh;
+}
+
+#nav-tab {
+  position: fixed;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 0;
+  height: 55px;
+  background-color: #000925;
+  z-index: 90;
+}
+
+#Footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 20px;
+  background-color: #000925;
+  border-radius: 5px 5px 0 0;
+  box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -webkit-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -moz-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  z-index: 100;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.nav-link:hover {
+  color: #ffa500;
+}
+
+.movieContainer {
+  background-color: #cfcfcf;
+}
+
+.bg-mywhite {
+  background-color: white;
+}
+
+.movie-image {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: -1px 1px 15px -1px #575757bf;
+  -webkit-box-shadow: -1px 1px 15px -1px #575757bf;
+  -moz-box-shadow: -1px 1px 15px -1px #575757bf;
+}
+
+.pop-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #20222980;
+  padding: 2% 5% 12% 5%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.pop-details {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #0b0e11;
+  border-radius: 0 0 10px 10px;
+  overflow-y: scroll;
+  padding: 25px;
+  box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -webkit-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -moz-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+}
+
+.movie-banner {
+  box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -webkit-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  -moz-box-shadow: -1px 1px 15px -1px #dbd7d7bf;
+  border-radius: 10px 10px 0 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  margin: 5px;
+  padding-top: 1px;
+  font-size: 20px;
+}
+
+.pop-image {
+  width: 75%;
+  border-radius: 10px;
+  box-shadow: -1px 1px 10px -1px #dbd7d7bf;
+}
+
+.like-button {
+  border: 0;
+  background-color: #0000;
+  height: 20px;
+  width: 40px;
+  padding-top: 0;
+  margin-top: 5px;
+}
+
+.like-container {
+  border-radius: 10px;
+}
+
+.movie-details {
+  list-style: none;
+}
+
+.list-group-comments li:nth-child(odd) {
+  background: #0c1a27;
+}
+
+.list-group-comments li:nth-child(even) {
+  background: #414144;
+}

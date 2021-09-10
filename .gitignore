@@ -1,0 +1,12 @@
+node_modules
+package-lock.json
+commit.sh
+runlinters.sh
+install-linters.sh
+.eslintrc.json
+.hintrc
+.stylelintrc.json
+install-linters.sh
+coverage/
+.DS_Store
+deployment.sh
