@@ -2,11 +2,11 @@
 
 # WEBFLIX (JavaScript Capstone Project)
 
-> In this activity, we worked as a team to prepare a Kanban board with a GitHub project. As this our very first group project in our Microverse journey, a very detailed template was provided by Microverse. In order to copy the Kanban board quickly, using a special script prepared for the team.
-
 > The JavaScript capstone project is about building our own web application based on an external API(TVmaze API: data about TV series and movies). TVmaze API was selected by the team, because it provides data about a topic that we both like, to enable us build the webapp around it. The webapp will have 2 user interfaces.
 - A home page showing a list of items that you can "like."
 - A popup window with more data about an item that you can use to comment on it
+
+> In this activity, we worked as a team to prepare a Kanban board with a GitHub project. As this our very first group project in our Microverse journey, a very detailed template was provided by Microverse, using a special script prepared for the team.
 
 ![screenshot](./app_screenshot.png)  ![screenshot](./app_popscreenshot.png)
 
