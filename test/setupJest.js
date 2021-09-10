@@ -1,3 +1,4 @@
-/* eslint-disable no-eval */
+/* eslint-disable */
 import 'regenerator-runtime/runtime.js';
+
 require('jest-fetch-mock').enableMocks();
