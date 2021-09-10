@@ -8,8 +8,7 @@ export const createLikes = async (itemId) => {
       item_id: itemId,
     }),
     redirect: 'follow',
-  })
-    .catch((error) => Error('error', error));
+  }).catch((error) => Error('error', error));
 };
 
 export const displayLikes = () => {
@@ -29,6 +28,7 @@ export const displayLikes = () => {
       'like-container');
 
     const counter = document.createElement('input');
+    counter.classList.add('inputLikeCounter');
     counter.type = 'hidden';
     counter.id = movie.value;
     counter.value = likesCount;
@@ -64,6 +64,8 @@ const getLikes = async () => {
     .then((result) => {
       allLikes = result;
       displayLikes();
+    }).catch(() => {
+      throw new Error('Failed to get like information');
     });
 };
 
