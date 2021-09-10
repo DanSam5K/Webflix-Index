@@ -35,7 +35,7 @@ const renderHome = (movies) => {
       return 0;
     }).forEach((movie) => {
       const movieSeparator = document.createElement('div');
-      movieSeparator.classList.add('col-3', 'm-0', 'p-2');
+      movieSeparator.classList.add('col-6', 'col-md-3', 'm-0', 'p-2');
       allMoviesContainer.appendChild(movieSeparator);
 
       const movieContainer = document.createElement('div');
@@ -65,7 +65,7 @@ const renderHome = (movies) => {
   homeContainer.appendChild(navigationContainer);
 
   const pagination = document.createElement('ul');
-  pagination.classList.add('pagination', 'justify-content-center');
+  pagination.classList.add('pagination', 'd-flex', 'flex-wrap', 'justify-content-center');
   navigationContainer.appendChild(pagination);
 
   const previousPage = document.createElement('li');
