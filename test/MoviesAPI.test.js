@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import fetchMock from 'fetch-mock';
+import fetchMock from 'fetch-mock'; // eslint-disable-line no-eval 
 import allmovieMovies from './__mock__/allmoviesdataMock.js';
 import mainContainer from './__mock__/mainMock.js';
 import allShows from '../src/MoviesAPI.js';
